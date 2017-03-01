@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import textwrap
 import os.path as path
@@ -67,9 +69,11 @@ def main():
     error.loc[-1] = ['<IQR>', -1, -1, 'N/A', -1] + list(iqr)
     error.sort_index(inplace=True)
 
-    base_path = path.join(path.dirname(path.abspath(__file__)),
-                          '..', '..', '..')
-    output_path = path.join(base_path, 'OUTPUT', 'python_matlab_comparison.tsv')
+    # bue 20170228: change output path to current working directory
+    #base_path = path.join(path.dirname(path.abspath(__file__)),
+    #                      '..', '..', '..')
+    #output_path = path.join(base_path, 'OUTPUT', 'python_matlab_comparison.tsv')
+    output_path = "./python_matlab_comparison.tsv"
     print()
     print("Saving full report to %s" % path.relpath(output_path))
     print()

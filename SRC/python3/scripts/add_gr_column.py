@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import textwrap
 import fileinput
@@ -39,7 +41,7 @@ def main():
         print(textwrap.dedent(main.__doc__))
         return
 
-    reader = csv.reader(fileinput.input(mode='rb'), delimiter='\t')
+    reader = csv.reader(fileinput.input(mode='r'), delimiter='\t')
     headers = next(reader)
     print_augmented_row(row=headers, last_col='GRvalue')
 
